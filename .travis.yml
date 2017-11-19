@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t rakshans1/java .
+  - docker run -d rakshans1/java
+  - docker ps -a
+  - docker run rakshans1/java /bin/sh -c "java -version"
